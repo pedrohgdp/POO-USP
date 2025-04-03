@@ -27,6 +27,7 @@ public class Polinomio {
         }
     }
 
+    //MUDAR
     //Calcular total, calcula o total com o resultado de cada termo
     public void calcularTotal(int x) {
         int resultado = 0;
