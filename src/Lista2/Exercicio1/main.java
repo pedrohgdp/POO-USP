@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
         Scanner entradaUsuario = new Scanner(System.in);
-        System.out.print("Digite o grau do polinomio: ");
+        System.out.print("Digite o grau maximo do polinomio: ");
         int grau = entradaUsuario.nextInt();
         Polinomio polinomio = new Polinomio(grau);
 

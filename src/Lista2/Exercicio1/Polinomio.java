@@ -15,6 +15,10 @@ public class Polinomio {
     //Adiciona um novo termo do polinomio no array
     public void AddTermo(int coeficiente, int grau) {
         if (grau <= grauMaxPolinomio) {
+            if(grau == 0){
+                termos[grau] = new Termo(coeficiente, 0);
+                return;
+            }
             if (termos[grau] == null) {
                 //Termo na posição do grau é uma instancia do objeto termo
                 termos[grau] = new Termo(coeficiente, grau);
@@ -27,21 +31,23 @@ public class Polinomio {
         }
     }
 
-    //MUDAR
+
     //Calcular total, calcula o total com o resultado de cada termo
     public void calcularTotal(int x) {
         int resultado = 0;
         for (int i = 0; i < termos.length; i++) {
             if (termos[i] != null) {
-                resultado += termos[i].calcularTermo(x);
+                int pow = (int) Math.pow(x, termos[i].grau);
+                resultado += termos[i].coeficiente * pow;
             }
         }
         System.out.println("O total da conta é: " + resultado);
     }
 
+    //Da para melhorar a saida
     //Mostra o polinomio na tela
     public void Mostra() {
-        //Percorrendo de traz para frente para mostrar o maior indice primeiro
+        //Percorrendo de tras para frente para mostrar o maior indice primeiro
         for (int i = termos.length - 1; i >= 0; i--) {
             if (termos[i] != null) {
                 System.out.print(termos[i].termoToString());
